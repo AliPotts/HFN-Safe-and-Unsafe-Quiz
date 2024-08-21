@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food and Kitchen Safety Quiz</title>
+    <style>
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Food and Kitchen Safety Quiz</h1>
+    <p><strong>Instructions</strong>: For each question, select whether the situation is "Safe" or "Unsafe." After you make your choice, feedback will be revealed below the question.</p>
+
+    <!-- Question 1 -->
+    <div>
+        <h3>1. Handling Raw Chicken</h3>
+        <p>You just took raw chicken out of the fridge and placed it on the kitchen counter. You then decided to wash your hands with warm water and soap before touching anything else.</p>
+        <button onclick="showFeedback('feedback1-safe')">Safe</button>
+        <button onclick="showFeedback('feedback1-unsafe')">Unsafe</button>
+        <p id="feedback1-safe" class="feedback">Correct! Washing your hands after handling raw chicken is very important to prevent the spread of bacteria.</p>
+        <p id="feedback1-unsafe" class="feedback incorrect">Oops! Actually, this is the safe thing to do. Always wash your hands after touching raw meat.</p>
+    </div>
+
+    <!-- Question 2 -->
+    <div>
+        <h3>2. Leaving Food Out</h3>
+        <p>After cooking dinner, you leave the leftovers on the counter for four hours before putting them in the fridge.</p>
+        <button onclick="showFeedback('feedback2-safe')">Safe</button>
+        <button onclick="showFeedback('feedback2-unsafe')">Unsafe</button>
+        <p id="feedback2-safe" class="feedback incorrect">Uh-oh! Leaving food out for more than two hours can allow bacteria to grow. It’s safer to refrigerate leftovers within two hours.</p>
+        <p id="feedback2-unsafe" class="feedback">Correct! Leaving food out for too long can lead to bacteria growth, making it unsafe to eat.</p>
+    </div>
+
+    <!-- Question 3 -->
+    <div>
+        <h3>3. Using a Cutting Board</h3>
+        <p>You cut raw meat on a cutting board and then use the same cutting board to chop vegetables without washing it.</p>
+        <button onclick="showFeedback('feedback3-safe')">Safe</button>
+        <button onclick="showFeedback('feedback3-unsafe')">Unsafe</button>
+        <p id="feedback3-safe" class="feedback incorrect">Uh-oh! This is actually unsafe. Using the same cutting board without washing it can spread harmful bacteria to your veggies.</p>
+        <p id="feedback3-unsafe" class="feedback">Correct! Always wash the cutting board thoroughly after cutting raw meat before using it for other foods.</p>
+    </div>
+
+    <!-- Question 4 -->
+    <div>
+        <h3>4. Checking Food Temperature</h3>
+        <p>You check the temperature of cooked chicken with a food thermometer and see that it reads 165°F (74°C).</p>
+        <button onclick="showFeedback('feedback4-safe')">Safe</button>
+        <button onclick="showFeedback('feedback4-unsafe')">Unsafe</button>
+        <p id="feedback4-safe" class="feedback">Correct! Chicken should be cooked to an internal temperature of 165°F (74°C) to ensure it is safe to eat.</p>
+        <p id="feedback4-unsafe" class="feedback incorrect">Oops! Actually, 165°F is the correct temperature for cooked chicken, making it safe to eat.</p>
+    </div>
+
+    <!-- Question 5 -->
+    <div>
+        <h3>5. Storing Raw and Cooked Food</h3>
+        <p>You store raw chicken on the top shelf of the fridge and cooked leftovers on the bottom shelf.</p>
+        <button onclick="showFeedback('feedback5-safe')">Safe</button>
+        <button onclick="showFeedback('feedback5-unsafe')">Unsafe</button>
+        <p id="feedback5-safe" class="feedback incorrect">Uh-oh! Storing raw chicken above cooked food can cause juices to drip and contaminate the cooked food. It’s safer to store raw chicken on the bottom shelf.</p>
+        <p id="feedback5-unsafe" class="feedback">Correct! Always store raw meat on the bottom shelf to prevent cross-contamination.</p>
+    </div>
+
+    <!-- Question 6 -->
+    <div>
+        <h3>6. Defrosting Meat</h3>
+        <p>You defrost meat by leaving it on the kitchen counter overnight.</p>
+        <button onclick="showFeedback('feedback6-safe')">Safe</button>
+        <button onclick="showFeedback('feedback6-unsafe')">Unsafe</button>
+        <p id="feedback6-safe" class="feedback incorrect">Uh-oh! Leaving meat out at room temperature to defrost is unsafe. It can lead to bacteria growth. It’s better to defrost meat in the refrigerator, cold water, or microwave.</p>
+        <p id="feedback6-unsafe" class="feedback">Correct! Leaving meat out at room temperature is not safe. Always defrost meat in the refrigerator, cold water, or microwave.</p>
+    </div>
+
+    <!-- Question 7 -->
+    <div>
+        <h3>7. Washing Fruits and Vegetables</h3>
+        <p>You wash all fruits and vegetables under running water before eating them, even if you plan to peel them.</p>
+        <button onclick="showFeedback('feedback7-safe')">Safe</button>
+        <button onclick="showFeedback('feedback7-unsafe')">Unsafe</button>
+        <p id="feedback7-safe" class="feedback">Correct! Washing all fruits and vegetables under running water helps remove dirt and bacteria, even if you plan to peel them.</p>
+        <p id="feedback7-unsafe" class="feedback incorrect">Uh-oh! Actually, it’s safe to wash all fruits and vegetables before eating them, even if you plan to peel them, to remove any dirt and bacteria.</p>
+    </div>
+
+<script>
+        function showFeedback(id) {
+            // Hide all feedback first
+            var feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(function(feedback) {
+                feedback.style.display = 'none';
+            });
+
+            // Show the selected feedback
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
